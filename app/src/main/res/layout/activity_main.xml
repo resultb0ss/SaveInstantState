@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:layout_margin="16dp"
+    android:background="#12707070"
+    android:padding="4dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6750A3"
+        app:subtitle="Каталог пользователей"
+        app:subtitleTextColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginBottom="8dp">
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <EditText
+        android:id="@+id/main_name_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Введите имя"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/main_age_ET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Введите возраст"
+        android:inputType="number"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/add_button_BTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Добавить пользователя"
+        android:layout_marginBottom="16dp"/>
+
+
+
+    <ListView
+        android:id="@+id/main_list_view_LV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+
+
+
+
+
