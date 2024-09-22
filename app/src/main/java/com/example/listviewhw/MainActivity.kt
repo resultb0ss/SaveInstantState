@@ -14,13 +14,12 @@ class MainActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var toolbarTwo: androidx.appcompat.widget.Toolbar
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        toolbarTwo = findViewById(R.id.toolbarMain)
-        setSupportActionBar(toolbarTwo)
+//        setSupportActionBar(binding.toolbarMain)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
