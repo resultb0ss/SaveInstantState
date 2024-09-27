@@ -31,11 +31,19 @@
         android:padding="4dp">
 
         <EditText
-            android:id="@+id/main_name_ET"
+            android:id="@+id/main_firstname_ET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Введите имя"
+            android:hint="Имя"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/main_lastname_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Фамилия"
             android:minHeight="48dp" />
 
         <EditText
@@ -43,9 +51,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:hint="Введите возраст"
+            android:hint="Возраст"
             android:inputType="number"
             android:minHeight="48dp" />
+        <EditText
+            android:id="@+id/main_adress_ET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Адрес"
+            android:minHeight="48dp" />
+
+
 
         <Button
             android:id="@+id/add_button_BTN"

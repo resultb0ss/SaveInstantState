@@ -1,5 +1,6 @@
 package com.example.listviewhw
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -32,12 +33,24 @@ class MainActivity : AppCompatActivity() {
         binding.mainListViewLV.adapter = adapter
 
         binding.addButtonBTN.setOnClickListener{
-            if (binding.mainNameET.text.isNotEmpty() && binding.mainAgeET.text.isNotEmpty()){
-                val user = User(binding.mainNameET.text.toString(),binding.mainAgeET.text.toString().toInt())
+            if (binding.mainFirstnameET.text.isNotEmpty() && binding.mainAgeET.text.isNotEmpty() &&
+                binding.mainLastnameET.text.isNotEmpty() && binding.mainAdressET.text.isNotEmpty())
+
+            {
+                val userFirstName = binding.mainFirstnameET.text.toString()
+                val userLastName = binding.mainLastnameET.text.toString()
+                val userAge = binding.mainAgeET.text.toString().toInt()
+                val userAdress = binding.mainAdressET.text.toString()
+                val user = User(userFirstName,userLastName,userAdress,userAge)
+
                 notes.add(user)
                 adapter.notifyDataSetChanged()
-                binding.mainNameET.text.clear()
+
+                binding.mainFirstnameET.text.clear()
+                binding.mainLastnameET.text.clear()
+                binding.mainAdressET.text.clear()
                 binding.mainAgeET.text.clear()
+
             } else {
                 Toast.makeText(this,
                     "Неверный ввод",
@@ -46,11 +59,13 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
         binding.mainListViewLV.onItemClickListener =
             AdapterView.OnItemClickListener{ parent, v,position, id ->
-                val note = adapter.getItem(position)
-                adapter.remove(note)
-                Toast.makeText(this,"Пользователь удален  $note", Toast.LENGTH_LONG ).show()
+                val intent = Intent(this,InfoActivity::class.java)
+                val user = adapter.getItem(position)
+                intent.putExtra(User::class.java.simpleName,user)
+                startActivity(intent)
             }
 
 
@@ -58,16 +73,4 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when(item.itemId){
-            R.id.exitMenuMain -> finish()
-        }
-        return super.onOptionsItemSelected(item)
-    }
 }

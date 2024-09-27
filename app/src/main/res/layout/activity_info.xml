@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_margin="8dp"
+        android:background="#464CAF50">
+
+        <TextView
+            android:id="@+id/infoActivityMainTextViewTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Информация"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/infoActivityFirstNameTextViewTV"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Имя:"
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                />
+
+            <TextView
+                android:id="@+id/infoActivityFirstNameResultTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:layout_marginTop="8dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/infoActivityLastNameTextViewTV"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Фамилия:"
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                />
+
+            <TextView
+                android:id="@+id/infoActivityLastNameResultTextViewTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:layout_marginTop="8dp"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/infoActivityPhoneNumberTextViewTV"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Номер телефона:"
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                />
+
+            <TextView
+                android:id="@+id/infoActivityPhoneNumberResutTextViewTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:layout_marginTop="8dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/infoActivityAdressTextViewTV"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Адрес:"
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                />
+
+            <TextView
+                android:id="@+id/infoActivityAdressResultTextViewTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" "
+                android:gravity="start"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:layout_marginTop="8dp"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
