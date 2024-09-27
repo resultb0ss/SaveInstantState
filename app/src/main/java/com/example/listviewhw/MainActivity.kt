@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        var notes: MutableList<User> = userViewModel.users
 
-        val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,notes)
+
+        val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,userViewModel.users)
         binding.mainListViewLV.adapter = adapter
 
         userViewModel.getListUsers().observe(this, Observer { newList ->
@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
                 val userAdress = binding.mainAdressET.text.toString()
                 val user = User(userFirstName,userLastName,userAdress,userAge)
 
-                notes.add(user)
+                userViewModel.users.add(user)
                 adapter.notifyDataSetChanged()
 
 
