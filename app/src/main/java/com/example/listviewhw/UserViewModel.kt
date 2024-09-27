@@ -6,7 +6,8 @@ import com.example.listviewhw.User
 
 class UserViewModel: ViewModel() {
 
-    var userList: MutableLiveData<MutableList<User>> = MutableLiveData()
+    val users: MutableList<User> = mutableListOf()
+    val userList: MutableLiveData<MutableList<User>> by lazy { MutableLiveData<MutableList<User>>() }
 
     fun getListUsers() = userList
 }
