@@ -9,12 +9,15 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.listviewhw.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityMainBinding
+    lateinit var userViewModel: UserViewModel
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,12 +28,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+        userViewModel = ViewModelProvider(this)[UserViewModel::class.java]
+
 
 
         var notes: MutableList<User> = mutableListOf()
 
         val adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,notes)
         binding.mainListViewLV.adapter = adapter
+
+        userViewModel.getListUsers().observe(this, Observer {
+            binding.mainListViewLV.adapter = ArrayAdapter(this,android.R.layout.simple_list_item_1,it)
+        })
+
+
 
         binding.addButtonBTN.setOnClickListener{
             if (binding.mainFirstnameET.text.isNotEmpty() && binding.mainAgeET.text.isNotEmpty() &&
@@ -44,6 +55,7 @@ class MainActivity : AppCompatActivity() {
                 val user = User(userFirstName,userLastName,userAdress,userAge)
 
                 notes.add(user)
+                userViewModel.userList.value = notes
                 adapter.notifyDataSetChanged()
 
                 binding.mainFirstnameET.text.clear()
